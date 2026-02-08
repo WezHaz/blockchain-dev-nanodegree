@@ -1,8 +1,15 @@
 # Project #8. Advanced Blockchain Concepts and Oracles
 
-# FlightSurety
+## Overview
 
-FlightSurety is a sample application project for Udacity's Blockchain course.
+FlightSurety is a sample dApp that demonstrates oracle-driven workflows and multi-party consensus patterns in Solidity. It includes smart contracts, a server for oracle simulation, and a front-end dApp.
+
+## Objectives
+
+- Implement a multi-contract architecture (data + app contracts)
+- Require multi-party consensus for airline registration
+- Use oracles to supply external data to the contract
+- Build a simple dApp to buy insurance and view flight status
 
 ## Install
 
@@ -41,6 +48,21 @@ To build dapp for prod:
 
 Deploy the contents of the ./dapp folder
 
+
+## Key files
+
+- `contracts/FlightSuretyData.sol` — data contract with persistence
+- `contracts/FlightSuretyApp.sol` — app contract with business logic
+- `src/server/server.js` — oracle simulation server
+- `src/dapp/` — front‑end client
+- `test/flightSurety.js` — contract tests
+- `test/oracles.js` — oracle flow tests
+
+## Notes
+
+- Run both the server and dApp for the full flow.
+- Oracle tests require Ganache (or Truffle Develop) with funded accounts.
+- The solidity version in this project is pinned; if you upgrade, update Truffle config and contracts.
 
 ## Resources
 
