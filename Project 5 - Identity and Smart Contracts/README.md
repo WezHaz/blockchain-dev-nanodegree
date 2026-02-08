@@ -1,5 +1,16 @@
 # Project #5. Identity and Smart Contracts
 
+## Overview
+
+This project implements an ERC‑721 (NFT) smart contract and a simple front end to mint, transfer, and query tokens. It uses Truffle for development and deployment and Web3 for client interaction.
+
+## Objectives
+
+- Build and deploy an ERC‑721 token contract
+- Add name, symbol, and basic metadata support
+- Write tests for minting and ownership flows
+- Provide a basic UI to interact with the contract
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -41,6 +52,13 @@ cd app
 npm run dev
 ```
 
+## Key files
+
+- `contracts/StarNotary.sol` — ERC‑721 contract implementation
+- `test/TestStarNotary.js` — contract tests
+- `app/src/index.js` — front‑end integration via Web3
+- `migrations/` — Truffle deployment scripts
+
 ### Optional - To deploy token contract on Rinkeby
 
 Setup [Infura](https://infura.io/)
@@ -52,6 +70,11 @@ Add metamask seed in truffle-config.js file
 ```
 truffle migrate --reset --network rinkeby
 ```
+
+## Notes
+
+- The Rinkeby network is deprecated; for modern deployments use a current testnet (e.g., Sepolia) and update `truffle-config.js` accordingly.
+- If you change the contract, re‑run `truffle migrate --reset` to redeploy.
 
 ### Other information
 
