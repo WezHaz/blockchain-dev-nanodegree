@@ -1,5 +1,16 @@
 # Project #7. Blockchain Architecture Part B
 
+## Overview
+
+This project implements a supply chain dApp with role-based access control and a Solidity contract that tracks state transitions for an item as it moves through the supply chain. It pairs with the architecture diagrams from Project 6 and provides the working contract, tests, and UI.
+
+## Objectives
+
+- Implement a supply chain smart contract
+- Enforce role-based permissions (farmer, distributor, retailer, consumer)
+- Emit events on state transitions
+- Provide a basic UI to interact with the contract
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -53,6 +64,14 @@ Add metamask seed in truffle-config.js file
 truffle migrate --reset --network rinkeby
 ```
 
+## Key files
+
+- `contracts/base/SupplyChain.sol` — main supply chain contract
+- `contracts/accesscontrol/*` — role definitions and modifiers
+- `test/TestSupplychain.js` — unit tests for flows and roles
+- `app/src/index.js` — front-end integration
+- `diagrams/` — UML and architecture artifacts
+
 ### Other information
 
 Truffle version used:
@@ -93,3 +112,8 @@ UML Diagrams:
 * [Truffle](https://www.trufflesuite.com/docs/truffle/getting-started/installation) - A development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM).
 * [Infura](https://infura.io) - Provide secure, reliable, and scalable access to Ethereum and IPFS. It also provide the infrastructure for your decentralized applications so you can focus on the features.
 * [Metamask](https://metamask.io/) - A bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
+
+## Notes
+
+- The Rinkeby network is deprecated; use a current testnet (e.g., Sepolia) and update `truffle-config.js`.
+- Re-run `truffle migrate --reset` after contract changes.
