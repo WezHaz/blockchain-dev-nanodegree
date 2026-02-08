@@ -1,9 +1,19 @@
 # Project #3. Connect Private Blockchain to Front-End Client via APIs
 
-This project has RESTful APIs built using Express Node.js framework that interfaces with the private blockchain built in [Project 2](https://github.com/kartikeybhardwaj/udacity-blockchain-developer-nanodegree/tree/master/Project%202%20-%20Blockchain%20Data).
-This project has two endpoints:
-* GET block
-* POST block
+## Overview
+
+This project exposes the private blockchain from Project 2 through a REST API built with Express. It provides basic read/write access to the chain and serves as the foundation for later service and validation workflows.
+
+## Objectives
+
+- Wrap blockchain operations in a web service
+- Support block retrieval by height
+- Support block creation via HTTP POST
+
+## Endpoints
+
+- `GET /block/:height`
+- `POST /block`
 
 ## Getting Started
 
@@ -26,6 +36,8 @@ Run server
 ```
 $ node server.js
 ```
+
+The API listens on `http://localhost:8000`.
 
 ## GET Block Endpoint
 
@@ -85,3 +97,8 @@ RESPONSE:
 * [level](https://www.npmjs.com/package/level) - A Node.js-style LevelDB wrapper for Node.js
 * [crypto-js](https://www.npmjs.com/package/crypto-js) - JavaScript library of crypto standards
 * [Express](https://expressjs.com/) - Web framework for Node.js
+
+## Notes
+
+- The service reads and writes to the local LevelDB database, so data persists between runs.
+- Use a tool like `curl` or Postman to exercise the API.
