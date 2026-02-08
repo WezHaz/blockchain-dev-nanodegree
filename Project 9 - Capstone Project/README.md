@@ -2,6 +2,16 @@
 
 # Capstone: Real Estate Marketplace
 
+## Overview
+
+This capstone implements a real‑estate marketplace dApp using ERC‑721 tokens and zk‑SNARK proofs. It includes a verifier contract, a minting contract that accepts proofs, and scripts/tests for deployment and verification.
+
+## Objectives
+
+- Integrate zk‑SNARK verification into minting
+- Deploy ERC‑721 contracts with proof‑based authorization
+- Provide ABI/artifacts for front‑end integration
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -35,6 +45,14 @@ $ npm install -g truffle
 4) Use the command `migrate --reset --network development` (to deploy your contract to the locally running ethereum network)
 
 5) Use the command `test` (to unit tests the contract)
+
+## Key files
+
+- `eth-contracts/contracts/Verifier.sol` — zk‑SNARK verifier
+- `eth-contracts/contracts/SolnSquareVerifier.sol` — proof‑gated ERC‑721 minting
+- `eth-contracts/contracts/ERC721Mintable.sol` — token base
+- `eth-contracts/test/*` — contract tests
+- `SolnSquareVerifierABI.txt` — ABI for front‑end usage
 
 ## Zocrates integrateion
 
@@ -83,6 +101,11 @@ __SolnSquareVerifier__ contract address
 ## OpenSea assets
 
 [https://rinkeby.opensea.io/assets/housingtoken](https://rinkeby.opensea.io/assets/housingtoken)
+
+## Notes
+
+- Rinkeby is deprecated; use a current testnet and update endpoints/addresses accordingly.
+- The ZoKrates steps are provided for documentation; artifacts are already generated in this repo.
 
 # Project Resources
 
