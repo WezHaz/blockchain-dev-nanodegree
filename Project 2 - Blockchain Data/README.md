@@ -1,13 +1,33 @@
 # Project #2. Create Your Own Private Blockchain
 
-This is Project 2, Private Blockchain, in this project I created the classes to manage my private blockchain, to be able to persist my blochchain I used LevelDB.
+## Overview
 
-## Setup project for Review.
+This project implements a simple private blockchain persisted with LevelDB. It focuses on core blockchain behaviors: block creation, hashing, validation, and chain integrity checks.
 
-To setup the project for review do the following:
-1. Download the project.
-2. Run command __npm install__ to install the project dependencies.
-3. Run command __node simpleChain.js__ in the root directory.
+## Objectives
+
+- Define a block data model and blockchain class.
+- Persist blocks in LevelDB.
+- Validate individual blocks and the entire chain.
+- Demonstrate tamper detection.
+
+## Key files
+
+- `Block.js` — block model and hashing logic.
+- `BlockChain.js` — chain operations, validation, and persistence.
+- `LevelSandbox.js` — LevelDB helpers.
+- `simpleChain.js` — driver for testing and examples.
+
+## Setup (review)
+
+1) Install dependencies:
+   ```
+   npm install
+   ```
+2) Run the test driver:
+   ```
+   node simpleChain.js
+   ```
 
 ## Testing the project
 
@@ -104,8 +124,13 @@ myBlockChain.validateChain().then((errorLog) => {
 
 This function validates the whole chain and return a list of errors found during the validation.
 
-## What do I learned with this Project
+## What I learned with this project
 
 * I was able to identify the basic data model for a Blockchain application.
 * I was able to use LevelDB to persist the Blockchain data.
 * I was able to write algorithms for basic operations in the Blockchain.
+
+## Notes
+
+- The chain stores block data in LevelDB, so repeated runs will use the same local database.
+- If you want a clean run, delete the LevelDB data directory before re-running.
