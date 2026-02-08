@@ -1,10 +1,30 @@
 # Project #4. Private Blockchain Notary Service
 
-This project is a Star Registry Service that allows users to claim ownership of their favorite star in the night sky.
-This project has RESTful APIs built using Express Node.js framework that interfaces with the private blockchain built in [Project 2](https://github.com/kartikeybhardwaj/udacity-blockchain-developer-nanodegree/tree/master/Project%202%20-%20Blockchain%20Data) and is built upon the structure of [Project 3](https://github.com/kartikeybhardwaj/udacity-blockchain-developer-nanodegree/tree/master/Project%203%20-%20Blockchain%20Web%20Services).
-This project has six endpoints:
-* Three POST endpoints
-* Three GET endpoints
+## Overview
+
+This project is a Star Registry Service that allows users to claim ownership of a star by signing a message with their wallet address. It extends the blockchain and API work from Projects 2 and 3 by adding identity validation, a mempool, and star submission rules.
+
+## Objectives
+
+- Validate ownership of a wallet address via signed messages
+- Enforce a time‑bound validation window
+- Allow a validated address to register a single star
+- Store star data on-chain (with story hex encoding)
+
+## Core flow
+
+1) Request validation to receive a message and window.
+2) Sign the message with the wallet address.
+3) Validate the signature to unlock a one‑time star registration.
+4) Submit star data and write it to the chain.
+
+## API summary
+
+This project exposes six endpoints:
+- Three POST endpoints
+- Three GET endpoints
+
+The detailed request/response examples below follow the same order.
 
 ## Getting Started
 
@@ -238,3 +258,9 @@ RESPONSE:
 * [crypto-js](https://www.npmjs.com/package/crypto-js) - JavaScript library of crypto standards
 * [bitcoinjs-message](https://www.npmjs.com/package/bitcoinjs-message) - JavaScript library to sign and verify bitcoin messages
 * [Express](https://expressjs.com/) - Web framework for Node.js
+
+## Notes
+
+- The validation window is time‑bound; once it expires, the address must request validation again.
+- Star stories are stored as hex strings and decoded on read.
+- The mempool enforces one star registration per validated address.
