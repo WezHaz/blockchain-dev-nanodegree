@@ -60,6 +60,65 @@ Capstone combining zk-SNARK verification with ERC-721 minting. Demonstrates proo
 - Web3, Truffle, Ganache
 - Solidity
 
+## Web3-specific technologies and setup
+
+This section summarizes the core Web3 tooling used across the projects, what it does, and the minimal setup needed to run the local workflows.
+
+### Solidity
+Purpose: Smart contract language for the EVM.
+Setup:
+- Install via Truffle (includes a compiler) or configure a specific version in `truffle-config.js`.
+- If you see compiler mismatches, align `pragma` statements in contracts with the configured compiler.
+
+### Truffle
+Purpose: Compile, test, and deploy Solidity contracts.
+Setup:
+- Install globally: `npm install -g truffle`
+- From a project folder:
+  - `truffle compile`
+  - `truffle test`
+  - `truffle migrate --reset`
+
+### Ganache (or Truffle Develop)
+Purpose: Local Ethereum network for deterministic testing.
+Setup:
+- Option A: `truffle develop` (built-in dev chain)
+- Option B: Install Ganache and run it, then point `truffle-config.js` to its RPC URL (typically `http://127.0.0.1:8545`).
+
+### Web3.js
+Purpose: JavaScript client library for interacting with contracts and nodes.
+Setup:
+- Install via project dependencies: `npm install`
+- Use the configured provider from the app (MetaMask in the browser or a local RPC endpoint for tests).
+
+### MetaMask
+Purpose: Browser wallet for signing transactions and connecting dApps.
+Setup:
+- Install the browser extension.
+- Add a local network:
+  - RPC URL: `http://127.0.0.1:8545`
+  - Chain ID: `1337` or `5777` (match your local chain)
+- Import an account from Ganache/Truffle Develop to test transactions.
+
+### Infura (for testnets)
+Purpose: Hosted RPC provider for public testnets.
+Setup:
+- Create a project at Infura and copy the HTTPS endpoint.
+- Update `truffle-config.js` with the endpoint and a wallet mnemonic.
+- Note: Rinkeby is deprecated; use an active testnet (e.g., Sepolia) and update network names accordingly.
+
+### ZoKrates (Project 9)
+Purpose: zk‑SNARK tooling to generate proofs and verifiers.
+Setup:
+- Use the Docker or native CLI (per your local environment).
+- The repo includes pre-generated artifacts; rebuild only if you modify the circuit.
+
+### LevelDB
+Purpose: Key-value storage for the private blockchain data (Projects 2–4).
+Setup:
+- Installed via `npm install`.
+- Data persists locally; delete the DB directory for a clean run.
+
 ## Getting started
 
 1) Pick a project folder from the list above.
