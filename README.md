@@ -119,6 +119,40 @@ Setup:
 - Installed via `npm install`.
 - Data persists locally; delete the DB directory for a clean run.
 
+## Next steps: multi-chain projects
+
+This repo focuses on EVM-centric fundamentals. Next steps will extend the same engineering discipline to non‑EVM chains and their native toolchains.
+
+### Cardano
+Focus areas:
+- Plutus smart contracts and on-chain/off-chain separation
+- UTXO design patterns and data modeling
+
+Tooling and setup (high-level):
+- Install `cardano-cli` and a local testnet or use a hosted testnet node.
+- Use a Plutus development environment (Haskell + Plutus libs) or Aiken for faster iteration.
+- Use `cardano-cli` to build transactions, manage keys, and submit to testnet.
+
+### Sui
+Focus areas:
+- Move smart contracts (Sui Move)
+- Object-centric data model and capability-based access
+
+Tooling and setup (high-level):
+- Install the Sui CLI and start a local network or connect to Devnet/Testnet.
+- Use the Sui Move toolchain to build, test, and publish packages.
+- Use the Sui SDK (TS/Rust) for client integration.
+
+### Avalanche
+Focus areas:
+- EVM-compatible smart contracts (C-Chain)
+- Subnet architecture for custom chains
+
+Tooling and setup (high-level):
+- Use standard EVM tools (Solidity, Hardhat/Truffle) against Avalanche C‑Chain.
+- Install the Avalanche CLI if experimenting with subnets.
+- Use MetaMask + RPC endpoints for local/testnet deployments.
+
 ## Getting started
 
 1) Pick a project folder from the list above.
